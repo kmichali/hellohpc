@@ -5,8 +5,3 @@ ml tools/prod
 ml Python
 
 python $PBS_O_WORKDIR/hellohpc.py
-
-
-
-
-
