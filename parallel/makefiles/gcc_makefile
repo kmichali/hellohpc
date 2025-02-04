@@ -1,0 +1,16 @@
+EXE = pi_serial pi_openmp pi_mpi pi_hybrid hello_hybrid hello_mpi hello_openmp for_openmp
+SRC = pi_serial.f90 pi_openmp.f90 pi_mpi.f90 pi_hybrid.f90 hello_hybrid.c hello_mpi.c hello_openmp.c for_openmp.c
+
+
+$(EXE): $(SRC)
+	gfortran -o pi_serial pi_serial.f90
+	gfortran -fopenmp -o pi_openmp pi_openmp.f90
+	mpif90 -fno-range-check pi_mpi.f90 -o pi_mpi
+	mpif90 -fopenmp -o pi_hybrid pi_hybrid.f90
+	gcc -fopenmp -o hello_openmp hello_openmp.c
+	mpicc -o hello_mpi hello_mpi.c
+	mpicc -fopenmp -o hello_hybrid hello_hybrid.c
+	gcc -fopenmp -o for_openmp for_openmp.c
+
+clean:
+	rm $(EXE)

@@ -1,0 +1,18 @@
+#PBS -l walltime=00:10:00 
+#PBS -l select=1:ncpus=1:mem=1gb 
+ 
+ml Julia
+# before you run pi_serial.jl:
+# the code needs BenchmarkTools that can be installed using package manager
+# on command line, type  julia to get julia console 
+# press [ to get into package mananger, type "add BenchmarkTools"
+# to get out of package manager -  type control c 
+# to get out of julia type control d
+
+cd $PBS_O_WORKDIR 
+
+julia pi_serial.jl
+
+
+
+
