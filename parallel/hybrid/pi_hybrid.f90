@@ -19,7 +19,8 @@
        allocate(tduration(0:nproc-1))
        duration(0:nproc-1)=0.0d0
 
-       n=10000000000
+       !n=10000000000
+       n=1E10
 
        CALL SYSTEM_CLOCK(COUNT_RATE=ticks_sec)
        CALL SYSTEM_CLOCK(COUNT=ini)
