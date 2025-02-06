@@ -1,9 +1,10 @@
 #PBS -l walltime=00:20:00
 #PBS -l select=1:ncpus=1:mem=2gb
 
-module load tools/prod
-module load SciPy-bundle
-source ~/venv/numbaenv/bin/activate
+ml tools/prod
+ml SciPy-bundle
+#source ~/venv/numbaenv/bin/activate
+ml numba/0.58.1-foss-2023a
 
 cd $PBS_O_WORKDIR
 python pi_jit.py

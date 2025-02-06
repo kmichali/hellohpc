@@ -4,9 +4,9 @@
 #PBS -l select=1:ncpus=24:mem=62gb
 
 ml tools/prod
-module load SciPy-bundle
-source ~/venv/numbaenv/bin/activate
-
+ml SciPy-bundle
+#source ~/venv/numbaenv/bin/activate
+ml numba/0.58.1-foss-2023a
 
 cd $PBS_O_WORKDIR
 python pi_pjit.py
