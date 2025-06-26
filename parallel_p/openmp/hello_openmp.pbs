@@ -1,0 +1,8 @@
+#PBS -l walltime=00:10:00
+#PBS -l select=1:ncpus=24:mem=1gb:ompthreads=24
+
+ml tools/prod
+ml GCC
+
+$PBS_O_WORKDIR/hello_openmp
+

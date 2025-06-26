@@ -1,0 +1,9 @@
+#PBS -l walltime=00:10:00
+#PBS -l select=2:ncpus=12:mem=4gb:mpiprocs=12
+
+ml tools/prod
+ml GCC
+ml OpenMPI
+
+mpiexec $PBS_O_WORKDIR/hello_mpi 
+
