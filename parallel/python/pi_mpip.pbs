@@ -4,7 +4,7 @@
 #PBS -l select=2:ncpus=12:mem=4gb
 
 ml tools/prod
-ml GCC OpenMPI
+ml OpenMPI/5.0.3-GCC-13.3.0
 ml SciPy-bundle/2024.05-gfbf-2024a
 source ~/venv/mpi4pyenv/bin/activate
 #ml mpi4py/3.1.5-gompi-2023b
